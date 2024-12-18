@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a69ac);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            border: 2px solid #ffcc00;
+            border-radius: 15px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            background-color: #ffcc00;
+            color: #1e3c72;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffd700;
+            transform: scale(1.05);
+        }
+
+        #fact {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Universe Fun Fact Generator</h1>
+        <p id="fact">Click the button to generate a fun fact about the universe!</p>
+        <button id="generate">Generate Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "The universe is approximately 13.8 billion years old.",
+            "There are more stars in the universe than grains of sand on all the Earth's beaches.",
+            "A day on Venus is longer than a year on Venus.",
+            "Neutron stars can spin 600 times per second.",
+            "The Milky Way galaxy is on a collision course with the Andromeda galaxy.",
+            "One million Earths could fit inside the sun.",
+            "Black holes can be detected by observing the behavior of nearby stars.",
+            "The observable universe is about 93 billion light-years in diameter.",
+            "There are more than 100 billion galaxies in the universe.",
+            "The largest known structure in the universe is the Hercules-Corona Borealis Great Wall."
+        ];
+
+        document.getElementById('generate').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
